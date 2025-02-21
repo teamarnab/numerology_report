@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Ensure Express knows where to find EJS files
-app.set("views", path.join(__dirname, "/views/public"));
+app.set("views", path.join(__dirname, "/views"));
 
 //ROUTES
 

@@ -1,0 +1,30 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+debug.log
+
+# Uploads & Generated Files
+uploads/
+public/uploads/
+reports/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Build Files (if using React, Vue, or Webpack)
+dist/
+build/
+
+# Coverage reports (for testing)
+coverage/
