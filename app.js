@@ -3,6 +3,8 @@ const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 
+const port = process.env.PORT || 3000;
+
 // Set EJS as the view engine
 app.set("view engine", "ejs");
 app.use(express.json());
@@ -22,10 +24,25 @@ app.get("/", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
-  const { name, number } = req.body;
-  res.json({ Name: name, Number: number });
+  const { fname, lname, date, month, year, gender } = req.body;
+
+  // Capitalize the first letter of first name & last name
+  const capitalize = (str) =>
+    str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
+  firstname = capitalize(fname);
+  lastname = capitalize(lname);
+
+  res.render("result", {
+    firstname,
+    lastname,
+    date,
+    month,
+    year,
+    gender,
+  });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server is running on port 3000");
 });
