@@ -1,21 +1,37 @@
 <html lang="en">
   <%- include("partials/head") %>
   <body>
+    <div class="result-header"><h1>Your numerology report</h1></div>
     <div class="container">
-      <div>
-        <div class="result-header"><h1>Your numerology report</h1></div>
+      <div class="result-container">
         <h2>Submitted Details</h2>
         <p><strong>Name:</strong> <%= name %></p>
         <p>Date of Birth: <%= date %>-<%= month %>-<%= year %></p>
-        <p><strong>Gender:</strong> <%= gender %></p>
+        <p><strong>Gender:</strong> <%= sex %></p>
+        <p><strong>Place of birth:</strong> <%= pob %></p>
         <br />
         <h2>Generated Report</h2>
         <p><%= generated_response %></p>
+        <br /><br />
+        <form action="/download-pdf" method="POST">
+          <input type="hidden" name="name" value="<%= name %>" />
+          <input
+            type="hidden"
+            name="date"
+            value="<%= date %>-<%= month %>-<%= year %>"
+          />
+          <input type="hidden" name="gender" value="<%= sex %>" />
+          <input
+            type="hidden"
+            name="generated_response"
+            value="<%= generated_response %>"
+          />
+          <input type="hidden" name="pob" value="<%= pob %>" />
+          <button type="submit" class="result-btn">Download PDF</button>
+        </form>
         <br />
-        <a href="/">Download PDF</a>
-        <a href="/">Go Back</a>
+        <a href="/"><button class="result-btn">Go Back</button></a>
       </div>
     </div>
-    <%- include("partials/footer") %>
   </body>
 </html>

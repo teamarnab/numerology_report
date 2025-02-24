@@ -4,7 +4,7 @@
     <%- include("partials/navbar") %>
     <div class="container">
       <div class="form-container">
-        <h2>Please fill out the folliwing details</h2>
+        <h2>Please fill out the following details</h2>
         <form action="/submit" method="POST">
           <div class="form-item">
             <label for="firstname">First Name:</label>
@@ -37,6 +37,8 @@
                 class="d-input"
                 name="date"
                 placeholder="Date of Birth"
+                min="1"
+                max="31"
                 required
               />
             </span>
@@ -48,6 +50,8 @@
                 class="d-input"
                 name="month"
                 placeholder="Month of Birth"
+                min="1"
+                max="12"
                 required
             /></span>
             <span class="d-item">
@@ -58,6 +62,8 @@
                 name="year"
                 class="d-input"
                 placeholder="Year of Birth"
+                min="1925"
+                max="<%= new Date().getFullYear() %>"
                 required
               />
             </span>
@@ -71,7 +77,17 @@
               <option value="female">Female</option>
               <option value="others">Others</option>
             </select>
-            <br /><br />
+          </div>
+
+          <div class="form-item">
+            <label for="lastname"> Place of Birth:</label>
+            <input
+              type="text"
+              id="p_o_b"
+              name="p_o_b"
+              placeholder="Enter place of birth"
+              required
+            />
           </div>
 
           <button class="from-btn" type="submit">
