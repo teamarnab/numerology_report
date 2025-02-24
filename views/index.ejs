@@ -1,71 +1,89 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>numerology</title>
-  </head>
+  <%- include("partials/head") %>
   <body>
-    <h2>Basic Form</h2>
-    <form action="/submit" method="POST">
-      <label for="firstname">First Name:</label>
-      <input
-        type="text"
-        id="fname"
-        name="fname"
-        placeholder="Enter your name"
-        required
-      />
-      <br /><br />
+    <%- include("partials/navbar") %>
+    <div class="container">
+      <div class="form-container">
+        <h2>Please fill out the folliwing details</h2>
+        <form action="/submit" method="POST">
+          <div class="form-item">
+            <label for="firstname">First Name:</label>
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="lastname"> LastName:</label>
+            <input
+              type="text"
+              id="lname"
+              name="lname"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
 
-      <label for="lastname"> LastName:</label>
-      <input
-        type="text"
-        id="lname"
-        name="lname"
-        placeholder="Enter your name"
-        required
-      />
-      <br /><br />
+          <div class="form-item">
+            <label>Date of Birth</label>
+            <span class="d-item">
+              <label for="date">Date: </label>
+              <input
+                type="number"
+                id="date"
+                class="d-input"
+                name="date"
+                placeholder="Date of Birth"
+                required
+              />
+            </span>
+            <span class="d-item"
+              ><label for="date">Month:</label>
+              <input
+                type="number"
+                id="month"
+                class="d-input"
+                name="month"
+                placeholder="Month of Birth"
+                required
+            /></span>
+            <span class="d-item">
+              <label for="date">Year:</label>
+              <input
+                type="number"
+                id="year"
+                name="year"
+                class="d-input"
+                placeholder="Year of Birth"
+                required
+              />
+            </span>
+          </div>
+          <div class="form-item"></div>
 
-      Date of Birth:
-      <br />
-      <label for="date">Date</label>
-      <input
-        type="number"
-        id="date"
-        name="date"
-        placeholder="Date of Birth"
-        required
-      />
-      <label for="date">Month</label>
-      <input
-        type="number"
-        id="month"
-        name="month"
-        placeholder="Month of Birth"
-        required
-      />
-      <label for="date">Year</label>
-      <input
-        type="number"
-        id="year"
-        name="year"
-        placeholder="Year of Birth"
-        required
-      />
-      <br /><br />
+          <div class="form-item">
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="others">Others</option>
+            </select>
+            <br /><br />
+          </div>
 
-      <label for="gender">Gender:</label>
-      <select name="gender" id="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="others">Others</option>
-      </select>
-      <br /><br />
+          <button class="from-btn" type="submit">
+            Generate Numerology Report
+          </button>
+        </form>
+      </div>
+      <div class="site-image">
+        <img src="/images/siteimage.jpg" alt="" srcset="" />
+      </div>
+    </div>
 
-      <button type="submit">Generate Numerology Report</button>
-    </form>
-    <script src="/js/index.js"></script>
+    <%- include("partials/footer") %>
   </body>
 </html>

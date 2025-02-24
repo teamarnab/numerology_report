@@ -1,17 +1,21 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+  <%- include("partials/head") %>
   <body>
-    <h2>Submitted Details</h2>
-    <p><strong>Name:</strong> <%= firstname %> <%= lastname %></p>
-    <p>Date of Birth: <%= date %>-<%= month %>-<%= year %></p>
-    <p><strong>Gender:</strong> <%= gender %></p>
-    <br />
-    <a href="/">Download PDF</a>
-    <a href="/">Go Back</a>
+    <div class="container">
+      <div>
+        <div class="result-header"><h1>Your numerology report</h1></div>
+        <h2>Submitted Details</h2>
+        <p><strong>Name:</strong> <%= name %></p>
+        <p>Date of Birth: <%= date %>-<%= month %>-<%= year %></p>
+        <p><strong>Gender:</strong> <%= gender %></p>
+        <br />
+        <h2>Generated Report</h2>
+        <p><%= generated_response %></p>
+        <br />
+        <a href="/">Download PDF</a>
+        <a href="/">Go Back</a>
+      </div>
+    </div>
+    <%- include("partials/footer") %>
   </body>
 </html>
