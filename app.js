@@ -98,7 +98,7 @@ app.post("/download-pdf", async (req, res) => {
     await browser.close();
 
     // Send the PDF for download
-    res.download(pdfPath, `${name}-numerology-report.pdf`, (err) => {
+    res.download(pdfPath, `${name}.pdf`, (err) => {
       if (err) console.error("Download Error:", err);
       fs.unlinkSync(pdfPath); // Delete the file after download
     });
